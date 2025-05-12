@@ -21,6 +21,20 @@ FamixCppTEntityCreator classSide >> annotation [
 ]
 
 { #category : 'entity creation' }
+FamixCppTEntityCreator >> newAttribute [
+
+	<generated>
+	^ self add: FamixCppAttribute new
+]
+
+{ #category : 'entity creation' }
+FamixCppTEntityCreator >> newAttributeNamed: aName [
+
+	<generated>
+	^ self add: (FamixCppAttribute named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCppTEntityCreator >> newClass [
 
 	<generated>

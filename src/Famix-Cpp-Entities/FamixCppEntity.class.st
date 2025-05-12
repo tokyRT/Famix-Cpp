@@ -38,6 +38,13 @@ FamixCppEntity >> isAssociation [
 ]
 
 { #category : 'testing' }
+FamixCppEntity >> isAttribute [
+
+	<generated>
+	^ false
+]
+
+{ #category : 'testing' }
 FamixCppEntity >> isBehavioural [
 
 	<generated>

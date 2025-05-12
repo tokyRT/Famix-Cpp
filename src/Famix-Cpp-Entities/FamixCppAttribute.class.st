@@ -16,6 +16,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `declaredType` | `FamixTTypedEntity` | `typedEntities` | `FamixTType` | Type of the entity, if any|
+| `receivingInvocations` | `FamixTInvocationsReceiver` | `receiver` | `FamixTInvocation` | List of invocations performed on this entity (considered as the receiver)|
 | `sourceAnchor` | `FamixTSourceEntity` | `element` | `FamixTSourceAnchor` | SourceAnchor entity linking to the original source code for this entity|
 
 
@@ -29,20 +30,20 @@
 
 "
 Class {
-	#name : 'FamixCAttribute',
+	#name : 'FamixCppAttribute',
 	#superclass : 'FamixCNamedEntity',
-	#traits : 'FamixTAttribute',
-	#classTraits : 'FamixTAttribute classTrait',
-	#category : 'Famix-C-Entities-Entities',
-	#package : 'Famix-C-Entities',
+	#traits : 'FamixTAttribute + FamixTInvocationsReceiver',
+	#classTraits : 'FamixTAttribute classTrait + FamixTInvocationsReceiver classTrait',
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
 	#tag : 'Entities'
 }
 
 { #category : 'meta' }
-FamixCAttribute class >> annotation [
+FamixCppAttribute class >> annotation [
 
 	<FMClass: #Attribute super: #FamixCNamedEntity>
-	<package: #'Famix-C-Entities'>
+	<package: #'Famix-Cpp-Entities'>
 	<generated>
 	^ self
 ]

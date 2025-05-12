@@ -125,7 +125,6 @@ FamixCGenerator >> defineHierarchy [
 
 	attribute --|> namedEntity.
 	attribute --|> #TAttribute.
-	attribute --|> #TInvocationsReceiver.
 	
 	behaviouralEntity --|> containerEntity.
 	behaviouralEntity --|> #TInvocable.

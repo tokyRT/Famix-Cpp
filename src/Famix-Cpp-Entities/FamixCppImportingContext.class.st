@@ -18,6 +18,13 @@ FamixCppImportingContext class >> importedMetamodel [
 ]
 
 { #category : 'importing' }
+FamixCppImportingContext >> importAttribute [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #Attribute)
+]
+
+{ #category : 'importing' }
 FamixCppImportingContext >> importClass [
 
 	<generated>
@@ -99,6 +106,13 @@ FamixCppImportingContext >> importSourceLanguage [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #SourceLanguage)
+]
+
+{ #category : 'testing' }
+FamixCppImportingContext >> shouldImportAttribute [
+
+	<generated>
+	^ self shouldImport: #Attribute
 ]
 
 { #category : 'testing' }
