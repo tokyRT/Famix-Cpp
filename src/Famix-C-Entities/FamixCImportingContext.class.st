@@ -39,13 +39,6 @@ FamixCImportingContext >> importAssociation [
 ]
 
 { #category : 'importing' }
-FamixCImportingContext >> importAttribute [
-
-	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #Attribute)
-]
-
-{ #category : 'importing' }
 FamixCImportingContext >> importBehaviouralEntity [
 
 	<generated>
@@ -92,6 +85,13 @@ FamixCImportingContext >> importEnumValue [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #EnumValue)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importField [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #Field)
 ]
 
 { #category : 'importing' }
@@ -242,13 +242,6 @@ FamixCImportingContext >> shouldImportAssociation [
 ]
 
 { #category : 'testing' }
-FamixCImportingContext >> shouldImportAttribute [
-
-	<generated>
-	^ self shouldImport: #Attribute
-]
-
-{ #category : 'testing' }
 FamixCImportingContext >> shouldImportBehaviouralEntity [
 
 	<generated>
@@ -295,6 +288,13 @@ FamixCImportingContext >> shouldImportEnumValue [
 
 	<generated>
 	^ self shouldImport: #EnumValue
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportField [
+
+	<generated>
+	^ self shouldImport: #Field
 ]
 
 { #category : 'testing' }

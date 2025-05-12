@@ -16,7 +16,6 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `declaredType` | `FamixTTypedEntity` | `typedEntities` | `FamixTType` | Type of the entity, if any|
-| `receivingInvocations` | `FamixTInvocationsReceiver` | `receiver` | `FamixTInvocation` | List of invocations performed on this entity (considered as the receiver)|
 | `sourceAnchor` | `FamixTSourceEntity` | `element` | `FamixTSourceAnchor` | SourceAnchor entity linking to the original source code for this entity|
 
 
@@ -30,19 +29,19 @@
 
 "
 Class {
-	#name : 'FamixCAttribute',
+	#name : 'FamixCField',
 	#superclass : 'FamixCNamedEntity',
-	#traits : 'FamixTAttribute + FamixTInvocationsReceiver',
-	#classTraits : 'FamixTAttribute classTrait + FamixTInvocationsReceiver classTrait',
+	#traits : 'FamixTAttribute',
+	#classTraits : 'FamixTAttribute classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
 
 { #category : 'meta' }
-FamixCAttribute class >> annotation [
+FamixCField class >> annotation [
 
-	<FMClass: #Attribute super: #FamixCNamedEntity>
+	<FMClass: #Field super: #FamixCNamedEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^ self

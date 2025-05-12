@@ -2,9 +2,10 @@
 TODO
 "
 Class {
-	#name : #FamixCppGenerator,
-	#superclass : #FamixMetamodelGenerator,
+	#name : 'FamixCppGenerator',
+	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
+		'attribute',
 		'inheritance',
 		'method',
 		'class',
@@ -28,27 +29,28 @@ Class {
 		'concretization',
 		'parameterConcretization'
 	],
-	#category : #'Famix-Cpp-Generator'
+	#category : 'Famix-Cpp-Generator',
+	#package : 'Famix-Cpp-Generator'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppGenerator class >> packageName [
 
 	<ignoreForCoverage>
 	^ 'Famix-Cpp-Entities'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppGenerator class >> prefix [
 	^ #'FamixCpp'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppGenerator class >> submetamodels [
 	^ { FamixCGenerator }
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCppGenerator >> defineClasses [
 	super defineClasses.
 	
@@ -59,6 +61,7 @@ FamixCppGenerator >> defineClasses [
 	sourceTextAnchor := self remoteEntity: #SourceTextAnchor withPrefix: #FamixC.
 
 	association := self remoteEntity: #Association withPrefix: #FamixC. 
+	attribute := builder newClassNamed: #Attribute.
 	behaviouralEntity := self remoteEntity: #BehaviouralEntity withPrefix: #FamixC. 
 	class := builder newClassNamed: #Class.
 	containerEntity := self remoteEntity: #ContainerEntity withPrefix: #FamixC. 
@@ -80,9 +83,13 @@ FamixCppGenerator >> defineClasses [
 	concretization := builder newClassNamed: #Concretization.
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCppGenerator >> defineHierarchy [
 	super defineHierarchy.
+	
+	attribute --|> namedEntity.
+	attribute --|> #TAttribute.
+	attribute --|> #TInvocationsReceiver.
 
 	class --|> structuredType.
 	class --|> #TClass.
@@ -120,7 +127,7 @@ FamixCppGenerator >> defineHierarchy [
 
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCppGenerator >> defineRelations [ 
 	super defineRelations.
 
@@ -133,7 +140,7 @@ FamixCppGenerator >> defineRelations [
 	(namespace property: #parentNamespace).
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCppGenerator >> newBuilder [
 
 	^ super newBuilder

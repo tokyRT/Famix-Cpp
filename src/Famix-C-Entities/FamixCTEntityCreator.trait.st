@@ -42,20 +42,6 @@ FamixCTEntityCreator >> newAssociation [
 ]
 
 { #category : 'entity creation' }
-FamixCTEntityCreator >> newAttribute [
-
-	<generated>
-	^ self add: FamixCAttribute new
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newAttributeNamed: aName [
-
-	<generated>
-	^ self add: (FamixCAttribute named: aName)
-]
-
-{ #category : 'entity creation' }
 FamixCTEntityCreator >> newBehaviouralEntity [
 
 	<generated>
@@ -116,6 +102,20 @@ FamixCTEntityCreator >> newEnumValueNamed: aName [
 
 	<generated>
 	^ self add: (FamixCEnumValue named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newField [
+
+	<generated>
+	^ self add: FamixCField new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newFieldNamed: aName [
+
+	<generated>
+	^ self add: (FamixCField named: aName)
 ]
 
 { #category : 'entity creation' }

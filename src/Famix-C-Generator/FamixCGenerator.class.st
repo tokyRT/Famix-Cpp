@@ -5,13 +5,13 @@ Class {
 		'access',
 		'aliasType',
 		'association',
-		'attribute',
 		'behaviouralEntity',
 		'compilationUnit',
 		'containerEntity',
 		'derefInvocation',
 		'enum',
 		'enumValue',
+		'field',
 		'function',
 		'headerFile',
 		'indexedFileAnchor',
@@ -73,11 +73,11 @@ FamixCGenerator >> defineClasses [
 	headerFile := self remoteEntity: #HeaderFile withPrefix: #FamixCPreproc. 
 
 	"STRCTURAL ENTITIES"
-	attribute := builder newClassNamed: #Attribute.
 	localVar := builder newClassNamed: #LocalVariable.
 	unknownVar := builder newClassNamed: #UnknownVariable.
 	parameter := builder newClassNamed: #Parameter.
 	enumValue := builder newClassNamed: #EnumValue.
+	field := builder newClassNamed: #Field.
 
 	containerEntity := builder newClassNamed: #ContainerEntity.
 	unknownContainerEntity := builder newClassNamed: #UnknownContainerEntity.
@@ -123,9 +123,6 @@ FamixCGenerator >> defineHierarchy [
 	association --|> sourcedEntity.
 	association --|> #TAssociation.
 
-	attribute --|> namedEntity.
-	attribute --|> #TAttribute.
-	attribute --|> #TInvocationsReceiver.
 	
 	behaviouralEntity --|> containerEntity.
 	behaviouralEntity --|> #TInvocable.
@@ -156,6 +153,9 @@ FamixCGenerator >> defineHierarchy [
 	enumValue --|> #TEnumValue.
 	enumValue --|> #TAccessible.
 	enumValue --|> #TSourceEntity.
+	
+	field --|> namedEntity.
+	field --|> #TAttribute.
 
 	function --|> behaviouralEntity.
 	function --|> #TFunction.
